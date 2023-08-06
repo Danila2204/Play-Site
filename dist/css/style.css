@@ -85,7 +85,21 @@ li {
 .text__item {
   color: var(--brand-color);
 }
-.text__button {
+
+.button {
+  width: 295px;
+  height: 89px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.button_primary {
   font-family: "Determination";
   font-size: var(--button-text-size);
+  border: 1px solid #fff;
+  background-color: var(--brand-background);
+  color: #fff;
+}
+.button_primary:hover {
+  background-color: #fff;
+  color: var(--brand-background);
 }

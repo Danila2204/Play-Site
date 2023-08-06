@@ -113,9 +113,25 @@ li {
     &__item {
         color: var(--brand-color);
     }
+}
 
-    &__button {
+.button {
+    width: 295px;
+    height: 89px;
+    transition: .5s;
+    cursor: pointer;
+
+    &_primary {
         @include button-text();
+
+        border: 1px solid #fff;
+        background-color: var(--brand-background);
+        color: #fff;
+
+        &:hover {
+            background-color: #fff;
+            color: var(--brand-background);
+        }
     }
 }
 
