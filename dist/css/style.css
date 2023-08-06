@@ -2,6 +2,9 @@
   --brand-color: #f00;
   --brand-background: #000;
   --text-size: 18px;
+  --button-text-size: 24px;
+  --title-size: 32px;
+  --main-title-size: 54px;
   --padding-security: 20px;
   --padding-nav-bar: 68px;
 }
@@ -44,8 +47,15 @@ a {
   color: #000;
 }
 
+h1 {
+  font-family: "Detemination";
+  font-size: var(--main-title-size);
+  color: var(--brand-color);
+}
+
 h2 {
-  font-size: 32px;
+  font-family: "Determination";
+  font-size: var(--title-size);
 }
 
 li {
@@ -73,4 +83,8 @@ li {
 }
 .text__item {
   color: var(--brand-color);
+}
+.text__button {
+  font-family: "Determination";
+  font-size: var(--button-text-size);
 }
