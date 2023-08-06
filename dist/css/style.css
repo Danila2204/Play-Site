@@ -48,9 +48,10 @@ a {
 }
 
 h1 {
-  font-family: "Detemination";
+  font-family: "Determination";
   font-size: var(--main-title-size);
   color: var(--brand-color);
+  padding-left: var(--padding-security);
 }
 
 h2 {

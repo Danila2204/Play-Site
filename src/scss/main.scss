@@ -1,3 +1,73 @@
+// === variables ===
+:root {
+    --brand-color: #f00;
+    --brand-background: #000;
+    --text-size: 18px;
+    --button-text-size: 24px;
+    --title-size: 32px;
+    --main-title-size: 54px;
+    --padding-security: 20px;
+    --padding-nav-bar: 68px;
+}
+// === / variables ===
+
+// === imports ===
+@font-face {
+    font-family: "Determination";
+    src: url("../imports/serifs/determination/determination.otf");
+}
+
+@font-face {
+    font-family: "Inter-Regular";
+    src: url("../imports/serifs/inter/Inter-Regular.otf");
+}
+
+@font-face {
+    font-family: "Inter-Medium";
+    src: url("../imports/serifs/inter/Inter-Medium.otf");
+}
+
+@font-face {
+    font-family: "Inter-Black";
+    src: url("../imports/serifs/inter/Inter-Black.otf");
+}
+// === / imports ===
+
+// === mixins ===
+@mixin text()
+{
+    font-family: "Inter-Regular";
+    font-size: var(--text-size);
+}
+
+@mixin button-text()
+{
+    font-family: "Determination";
+    font-size: var(--button-text-size);
+}
+
+@mixin titile-text()
+{
+    font-family: "Determination";
+    font-size: var(--title-size);
+}
+// === / mixins ===
+
+// === main ===
 .main {
     flex-grow: 1;
+    background-repeat: no-repeat;
+    
+    &__section {
+        display: flex;
+        background-image: url(@img/main-background.svg);
+        min-height: 266px;
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+    }
 }
+
+// === / main ===
