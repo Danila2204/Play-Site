@@ -58,6 +58,7 @@ h1 {
 h2 {
   font-family: "Determination";
   font-size: var(--title-size);
+  color: #fff;
 }
 
 li {
