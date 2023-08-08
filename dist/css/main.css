@@ -26,15 +26,73 @@
   src: url("../imports/serifs/inter/Inter-Black.otf");
 }
 .main {
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
-  background-repeat: no-repeat;
 }
 .main__section {
-  display: flex;
+  background-repeat: no-repeat;
   background-image: url(../imports/img/main-background.svg);
+  background-position: center center;
+  display: flex;
   min-height: 266px;
 }
 .main__container {
   display: flex;
   align-items: center;
+}
+
+.game-types {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+@media (max-width: 431px) {
+  .game-types {
+    padding-top: var(--padding-security) 5px;
+  }
+}
+@media (max-width: 150px) {
+  .game-types {
+    padding-top: var(--padding-security) 0;
+  }
+}
+.game-types__section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.game-types__link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background-color: var(--brand-background);
+  transition: 0.5s;
+}
+@media (max-width: 1140px) {
+  .game-types__link:not(:last-child) {
+    margin-bottom: var(--padding-security);
+  }
+}
+.game-types__link:hover {
+  background-color: #fff;
+  color: var(--brand-background);
+}
+.game-types__buttons {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+@media (max-width: 1140px) {
+  .game-types__buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .game-types__buttons button {
+    margin-bottom: 20px;
+  }
 }

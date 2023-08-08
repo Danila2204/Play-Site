@@ -48,6 +48,7 @@ a {
 }
 
 h1 {
+  word-break: break-all;
   font-family: "Determination";
   font-size: var(--main-title-size);
   color: var(--brand-color);
@@ -60,11 +61,34 @@ h2 {
 }
 
 li {
+  display: block;
   list-style: none;
 }
 
 .section-inner {
   min-width: 1125px;
+}
+@media (max-width: 1135px) {
+  .section-inner {
+    padding: 0 var(--padding-security);
+    min-width: 900px;
+  }
+}
+@media (max-width: 900px) {
+  .section-inner {
+    min-width: 450px;
+  }
+}
+@media (max-width: 450px) {
+  .section-inner {
+    min-width: 200px;
+  }
+}
+@media (max-width: 227px) {
+  .section-inner {
+    padding: 0;
+    min-width: 150px;
+  }
 }
 
 .nav-bar {
@@ -75,7 +99,19 @@ li {
 
 .list {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+}
+@media (max-width: 430px) {
+  .list {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (max-width: 430px) {
+  .list__item:not(:last-child) {
+    margin-bottom: 20px;
+  }
 }
 
 .text {
@@ -87,19 +123,31 @@ li {
 }
 
 .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   width: 295px;
   height: 89px;
   transition: 0.5s;
   cursor: pointer;
+}
+@media (max-width: 352px) {
+  .button {
+    width: 200px;
+  }
+}
+@media (max-width: 210px) {
+  .button {
+    width: 120px;
+  }
 }
 .button_primary {
   font-family: "Determination";
   font-size: var(--button-text-size);
   border: 1px solid #fff;
   background-color: var(--brand-background);
-  color: #fff;
 }
 .button_primary:hover {
-  background-color: #fff;
   color: var(--brand-background);
 }
