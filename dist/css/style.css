@@ -68,10 +68,10 @@ li {
 
 .section-inner {
   min-width: 1125px;
+  padding: 0 var(--padding-security);
 }
 @media (max-width: 1135px) {
   .section-inner {
-    padding: 0 var(--padding-security);
     min-width: 900px;
   }
 }

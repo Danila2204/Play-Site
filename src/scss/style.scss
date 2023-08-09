@@ -96,9 +96,9 @@ li {
 
 .section-inner {
     min-width: 1125px;
+    padding: 0 var(--padding-security);
 
     @media (max-width: 1135px) {
-        padding: 0 var(--padding-security);
 
         min-width: 900px;
     }
