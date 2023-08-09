@@ -1,0 +1,48 @@
+@import url("./style.css");
+
+// === main ===
+.main {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    &__card {
+        width: 20%;
+        padding: 17px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: var(--brand-color);
+    }
+}
+
+.card {
+    &__title {
+        padding-bottom: 17px;
+    }
+
+    &__horizontal {
+        width: 86%;
+        border: 1px solid var(--brand-background);
+        display: block;
+    }
+
+    &__text {
+        padding-top: 17px;
+    }
+}
+// === /main ===

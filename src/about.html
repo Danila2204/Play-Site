@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    @@include("./html/head.html", {
+        "title": "О нас",
+        "style": "./css/about.css",
+    })
+    <body>
+        @@include("./html/header.html", {})
+        <!-- main -->
+        <main class="main">
+            <div class="main__container section-inner">
+                <h2>О нас</h2>
+                <div class="cards">
+                    <div class="cards__card">
+                        <p class="card__title text">Кто мы</p>
+                        <hr class="card__horizontal">
+                        <p class="card__text text">
+                            Мы - команда программистов, создающих фанатские undertale игры на основе каноничных данных.
+                        </p>
+                    </div>
+                    <div class="cards__card">
+                        <p class="card__title text">За что мы</p>
+                        <hr class="card__horizontal">
+                        <p class="card__text text">
+                            Мы за популиризацию и создание небольших и средних непопулярных битв и АВ по undertale. Мы за ликвидацию безграммотности в сообществе undertale.
+                        </p>
+                    </div>
+                    <div class="cards__card">
+                        <p class="card__title text">Против чего мы</p>
+                        <hr class="card__horizontal">
+                        <p class="card__text text">
+                            Мы против однообразности содержимого и неграммотности в сообществе undertale.</p>
+                    </div>
+                    <div class="cards__card">
+                        <p class="card__title text">Наша цель</p>
+                        <hr class="card__horizontal">
+                        <p class="card__text text">
+                            Создание качественных, каноничных и граммотных фанатских игр и битв по undertale.
+                        </p>
+                    </div>
+                </div>
+            </div>  
+        </main>
+        <!-- / main -->
+        @@include("./html/footer.html", {})
+    </body>
+</html>
