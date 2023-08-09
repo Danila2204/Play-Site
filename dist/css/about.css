@@ -13,11 +13,11 @@
 
 .cards {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 .cards__card {
-  width: 20%;
+  max-width: 20%;
   padding: 17px;
   display: flex;
   flex-direction: column;
