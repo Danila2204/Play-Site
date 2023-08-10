@@ -12,18 +12,24 @@
 }
 
 .cards {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 .cards__card {
-  max-width: 20%;
+  width: 328px;
   padding: 17px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   background-color: var(--brand-color);
+}
+@media (max-width: 329px) {
+  .cards__card {
+    min-width: 150px;
+  }
 }
 
 .card__title {
