@@ -1,8 +1,6 @@
 @import url("./style.css");
 .main {
-  display: flex;
   justify-content: center;
-  flex-grow: 1;
 }
 .main__container {
   max-width: 1616px;

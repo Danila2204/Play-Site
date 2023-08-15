@@ -1,0 +1,39 @@
+// === imports ===
+@import url("./style.css");
+// === / imports ===
+
+.main {
+    flex-direction: column;
+    align-items: center;
+
+    &__section {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-grow: 1;
+    }
+
+    &__title {
+        text-align: center;
+    }
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media (max-width: 924px) {
+        justify-content: space-evenly;
+    }
+}
+
+.button {
+    &:not(:last-child) {
+        @media (max-width: 924px) {
+            margin-bottom: 20px;
+        }
+    }
+}
