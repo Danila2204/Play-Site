@@ -74,8 +74,11 @@
     }
 
     &__text {
-        word-break: break-all;
         padding-top: 17px;
+        
+        @media (max-width: 178px) {
+            word-break: break-all;
+        }
     }
 }
 // === /main ===

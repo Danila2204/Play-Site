@@ -127,6 +127,11 @@ li {
 .text__item {
   color: var(--brand-color);
 }
+@media (max-width: 350px) {
+  .text {
+    word-break: break-all;
+  }
+}
 
 .button {
   display: flex;
@@ -149,8 +154,6 @@ li {
   }
 }
 .button_primary {
-  font-family: "Determination";
-  font-size: var(--button-text-size);
   border: 1px solid #fff;
   background-color: var(--brand-background);
 }
@@ -158,6 +161,8 @@ li {
   color: var(--brand-background);
 }
 .button__text {
+  font-family: "Determination";
+  font-size: var(--button-text-size);
   width: 100%;
   height: 100%;
   display: flex;

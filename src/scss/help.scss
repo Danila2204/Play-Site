@@ -2,6 +2,7 @@
 @import url("./style.css");
 // === / imports ===
 
+// === main ===
 .main {
     flex-direction: column;
     align-items: center;
@@ -24,7 +25,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-
+    
     @media (max-width: 924px) {
         justify-content: space-evenly;
     }
@@ -36,4 +37,135 @@
             margin-bottom: 20px;
         }
     }
+
+    &_modal {
+        &:hover {
+            border-color: var(--brand-color);
+        }
+    }
+
+    &__text {
+
+        &_modal {
+            font-family: "Inter-Black";
+
+            &:hover {
+                background-color: var(--brand-background);
+                color: var(--brand-color);
+            }
+        }
+    }
 }
+
+// === / main ===
+// === modal ===
+.modal {
+    &.open &__overlay,
+    &.open &__window {
+        opacity: 1;
+        z-index: 200;
+    }
+
+    &.hide &__overlay,
+    &.hide &__window {
+        opacity: 1;
+        z-index: 200;
+    }
+    
+    &.open &__window {
+        background-color: #161616;
+        transform: translateY(100px);
+    }
+    
+    &.open &__overlay {
+        background: rgba(0, 0, 0, .5);
+    }
+    
+    &.hide &__window {
+        transform: translateY(-200px);
+    }
+    
+    &.hide &__overlay {
+        background: rgba(0, 0, 0, 0);
+    }
+    
+    &__window, &__overlay {
+        opacity: 0;
+        z-index: -1;
+    }
+    
+    &__overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0);
+        transition: background .2s ease-in;
+    }
+    
+    &__window {
+        width: 80vw;
+        margin: 0 auto;
+        border-radius: 5px;
+        background: #161616;
+        transform: translateY(-200px);
+        transition: transform .2s ease-in;
+    }
+    
+    &__header {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 95% 5%;
+        border-bottom: 1px solid #eee;
+        padding: 5px 10px;
+
+        @media (max-width: 175px) {
+            padding: 5px 0;
+        }
+    }
+    
+    &__title {
+        padding: 0 5px;
+        justify-self: center;
+        font-family: "Inter-Medium";
+        font-size: 24px;
+        color: #fff;
+        
+        @media (max-width: 350px) {
+            font-size: 100%;
+        }
+    }
+    
+    &__close {
+        justify-self: end;
+        color: #fff;
+        cursor: pointer;
+    }
+    
+    &__content {
+        padding: 10px;
+        @media (max-width: 190px) {
+            max-height: 670px;
+            overflow-y: scroll;
+        }
+    }
+    
+    &__text {
+        padding: 0;
+        margin: 0;
+    }
+    
+    &__footer {
+        display: flex;
+        justify-content: space-around;
+        padding: 5px 10px;
+        border-top: 1px solid #eee;
+    }
+}
+
+.text_modal {
+    color: #fff;
+}
+
+// === / modal ===
