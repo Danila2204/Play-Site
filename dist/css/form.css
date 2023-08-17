@@ -1,0 +1,40 @@
+@import url("./style.css");
+.main {
+  justify-content: center;
+}
+.main__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.main__title {
+  align-self: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-grow: 1;
+}
+.form__input {
+  max-width: 520px;
+  min-height: 100px;
+  resize: none;
+}
+
+.input {
+  font-family: "Determination";
+  font-size: var(--button-text-size);
+  color: var(--brand-color);
+  background-color: var(--brand-background);
+  border: 1px var(--brand-color) solid;
+  border-radius: 5px;
+}
+.input::placeholder {
+  color: var(--brand-color);
+}
+.input__datalist {
+  max-width: 244px;
+  min-height: 45px;
+}

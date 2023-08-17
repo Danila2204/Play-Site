@@ -1,0 +1,51 @@
+// === imports ===
+@import url("./style.css");
+// === / imports ===
+// === main ===
+.main {
+    justify-content: center;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__title {
+        align-self: center;
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-grow: 1;
+
+    &__input {
+        max-width: 520px;
+        min-height: 100px;
+        resize: none;
+    }
+
+    
+}
+
+.input {
+    font-family: "Determination";
+    font-size: var(--button-text-size);
+    color: var(--brand-color);
+    background-color: var(--brand-background);
+    border: 1px var(--brand-color) solid;
+    border-radius: 5px;
+
+    &::placeholder {
+        color: var(--brand-color);
+    }
+
+    &__datalist {
+        max-width: 244px;
+        min-height: 45px;
+    }
+}
+// === / main ===

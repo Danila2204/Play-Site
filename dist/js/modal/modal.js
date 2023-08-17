@@ -15,22 +15,14 @@ function _createModalFooter(buttons = []) {
   wrap.classList.add("modal__footer");
 
   buttons.forEach(button => {
-    const $button = document.createElement("button");
+    const $button = document.createElement("a");
     $button.classList.add(`button`);
     $button.classList.add(`button_${button.type}`);
-  
-    const textButton = document.createElement(`${button.textType || "p"}`);
-    textButton.classList.add("button__text");
-    textButton.classList.add(`button__text_${button.type}`);
-    textButton.textContent = button.text;
+    $button.textContent = button.text;
     
     $button.addEventListener("click", button.handler || noop);
     wrap.appendChild($button);
-    $button.appendChild(textButton);
-
-    console.log(textButton.tagName)
-
-    if (textButton.tagName.toLowerCase() == "a") textButton.setAttribute("href", button.hrefText);
+    if ($button.tagName.toLowerCase() == "a") $button.setAttribute("href", button.hrefText);
   })
 
   return wrap;

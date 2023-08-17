@@ -39,7 +39,13 @@
     }
 
     &_modal {
+        font-family: "Determination";
+        font-size: 24px;
+        color: #fff;
+        border: 1px #fff solid;
+
         &:hover {
+            color: var(--brand-color);
             border-color: var(--brand-color);
         }
     }
