@@ -1,0 +1,26 @@
+// === imports ===
+@import url("./style.css");
+// === / imports ===
+
+.main {
+    justify-content: center;
+
+    &__section {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-content: space-between;
+    flex-wrap: wrap;
+
+    &>.button {
+        margin-top: 10px;
+    }
+}

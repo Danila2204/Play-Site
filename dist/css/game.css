@@ -1,0 +1,23 @@
+@import url("./style.css");
+.main {
+  justify-content: center;
+}
+.main__section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.game-image {
+  width: 50%;
+}
+@media (max-width: 449px) {
+  .game-image {
+    width: 100%;
+  }
+}
+
+.description {
+  color: #fff;
+}

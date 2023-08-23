@@ -1,0 +1,26 @@
+// === imports ===
+@import url("./style.css");
+// === / imports ===
+
+.main {
+    justify-content: center;
+
+    &__section {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.game-image {
+    width: 50%;
+
+    @media (max-width: 449px) {
+        width: 100%;
+    }
+}
+
+.description {
+    color: #fff;
+}
