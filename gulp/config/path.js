@@ -11,13 +11,17 @@ export const path = {
         js: `${distFolder}/js/`,
         files: `${distFolder}/imports/`,
         includes: `${distFolder}/`,
+        server: `${distFolder}/server/`,
+        ejs: `${distFolder}/`
     },
     src: {
         html: `${srcFolder}/*.html`,
         scss: `${srcFolder}/scss/**/*.scss`,
         js: `${srcFolder}/js/**/*.js`,
         includes: `${srcFolder}/includes/**/*.*`,
-        files: `${srcFolder}/imports/**/*.*`
+        files: `${srcFolder}/imports/**/*.*`,
+        server: `${srcFolder}/server/**/*.*`,
+        ejs: `${srcFolder}/*.ejs`
     },
     watch: {
         html: `${srcFolder}/**/*.html`,

@@ -16,7 +16,7 @@ const joinModal = $.modal({
     text: "Вступить",
     type: "modal",
     textType: "a",
-    hrefText: "https://t.me/+7AENvxC6HCphMjAy",
+    hrefText: "#",
     handler() {
         joinModal.close();
       }

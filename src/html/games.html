@@ -1,8 +1,21 @@
-<main class="main">
-    <div class="main__section section-inner">
-        <h2>@@pageTitle</h2>
-        <div class="buttons">
-            <a href="./gtd.html" class="button button_primary">Ссылка</a>
-        </div>
-    </div>
-</main>
+<!doctype html>
+<html lang="ru">
+    @include("./head.html", {
+        "title": <%= title %>,
+        "style": "./css/games.css"
+    })
+    <body>
+        @include ("0")
+        <main class="main">
+            <div class="main__section section-inner">
+                <h2><%= title %></h2>
+                <div class="buttons">
+                    <% games[gameType].forEach(game => {%>
+                    <a href=<%= game.url %> class="button button_primary"><%= game.name %></a>
+                    <% }) %>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
+

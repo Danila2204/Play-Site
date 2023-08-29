@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href=./css/main.css>
+    <title>Главная</title>
+</head>
+    <body>
+        <!-- header -->
+<header class="header nav-bar">
+    <section class="nav-bar__container header__container section-inner">
+        <nav class="nav">
+            <ul class="list">
+                <li class="list__item"><a href="../" class="text text__item">Главная</a></li>
+                <li class="list__item"><a href="../about" class="text text__item">О нас</a></li>
+                <li class="list__item"><a href="../help" class="text text__item">Помощь</a></li>
+            </ul>
+        </nav>
+    </section>
+</header>
+<!-- / header -->
+        <main class="main">
+            <div class="main__section">
+                <div class="main__container _container">
+                    <h1>Игры от Red revolutioners</h1>
+                </div>
+            </div>
+        </main>
+        <section class="game-types">
+            <div class="game-types__section section-inner">
+                <div class="game-types__buttons">
+                    <% types.forEach(type => {%>
+                    <a href="./<%= type %>" class="button button_primary">
+                        Undertale <%= type %>
+                    </a>
+                    <% }) %>
+                </div>
+            </div>
+        </section>
+        <!-- footer -->
+<footer class="footer nav-bar">
+    <section class="nav-bar__container footer__container section-inner">
+        <nav class="nav">
+            <ul class="list">
+                <li class="list__item"><a href="../index" class="text text__item">Главная</a></li>
+                <li class="list__item"><a href="../about" class="text text__item">О нас</a></li>
+                <li class="list__item"><a href="../help" class="text text__item">Помощь</a></li>
+            </ul>
+        </nav>
+    </section>
+</footer>
+<!-- / footer -->
+    </body>
+</html>

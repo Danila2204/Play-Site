@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href=./css/games.css>
+    <title><%= title %></title>
+</head>
+    <body>
+    <!-- header -->
+<header class="header nav-bar">
+    <section class="nav-bar__container header__container section-inner">
+        <nav class="nav">
+            <ul class="list">
+                <li class="list__item"><a href="../" class="text text__item">Главная</a></li>
+                <li class="list__item"><a href="../about" class="text text__item">О нас</a></li>
+                <li class="list__item"><a href="../help" class="text text__item">Помощь</a></li>
+            </ul>
+        </nav>
+    </section>
+</header>
+<!-- / header -->
+    <main class="main">
+        <div class="main__section section-inner">
+            <h2>Undertale <%= title %></h2>
+            <div class="buttons">
+                <% for (let game in gameType) {%>
+                    <a href="./<%= game.url %>" class='button button_primary'><%= gameType[game].name %></a>
+                <% } %>
+            </div>
+        </div>
+    </main>
+    <!-- footer -->
+<footer class="footer nav-bar">
+    <section class="nav-bar__container footer__container section-inner">
+        <nav class="nav">
+            <ul class="list">
+                <li class="list__item"><a href="../index" class="text text__item">Главная</a></li>
+                <li class="list__item"><a href="../about" class="text text__item">О нас</a></li>
+                <li class="list__item"><a href="../help" class="text text__item">Помощь</a></li>
+            </ul>
+        </nav>
+    </section>
+</footer>
+<!-- / footer -->
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ru">
+    @@include("./html/head.html", {
+    "title": "<%= title %>",
+    "style": "./css/games.css"
+    })
+    <body>
+    @@include("./html/header.html", {})
+    <main class="main">
+        <div class="main__section section-inner">
+            <h2>Undertale <%= title %></h2>
+            <div class="buttons">
+                <% for (let game in gameType) {%>
+                    <a href="./<%= game.url %>" class='button button_primary'><%= gameType[game].name %></a>
+                <% } %>
+            </div>
+        </div>
+    </main>
+    @@include("./html/footer.html", {})
+    </body>
+</html>

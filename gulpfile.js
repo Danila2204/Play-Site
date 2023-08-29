@@ -11,6 +11,8 @@ import { server } from "./gulp/tasks/server.js";
 import { scss } from "./gulp/tasks/scss.js";
 import { includes } from "./gulp/tasks/includes.js";
 import { javascript } from "./gulp/tasks/javascript.js";
+import { backend } from "./gulp/tasks/backend.js";
+import { ejs } from "./gulp/tasks/ejs.js";
 
 global.app = {
     isBuild: process.argv.includes("--build"),
@@ -28,7 +30,7 @@ function watcher() {
     gulp.watch(path.watch.js, javascript);
 }
 
-const mainTasks = gulp.parallel(copy, includes, html, scss, javascript);
+const mainTasks = gulp.parallel(copy, includes, html, scss, javascript, backend, ejs);
 const develop = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 
 gulp.task("default", develop);
