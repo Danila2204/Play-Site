@@ -1,0 +1,13 @@
+// === imports ===
+@import "style.css";
+// === / imports ===
+
+.main {
+    justify-content: center;
+
+    &__section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

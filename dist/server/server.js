@@ -11,6 +11,7 @@ const createPath = filePath => path.resolve("./", "../", `${filePath}.ejs`);
 
 const games = {};
 const types = [];
+const messages = {};
 
 const app = express();
 const mongoClient = new mongoDB.MongoClient(URL);
@@ -36,7 +37,6 @@ const connect = async () => {
 
 
 		for await (let nameGame of nameGames) {
-
 			if (nameGame.type === types[typesIndex]) {
 				games[nameGame.type][`game_${id}`] = {};
 				games[nameGame.type][`game_${id}`]["name"] = nameGame.name;
@@ -47,12 +47,16 @@ const connect = async () => {
 			id++;
 			typesIndex++;
 		}
+
+
 	} catch (error) {
 		console.log(error);
 	}
 }
 
+
 connect().then(() => {
+	app.use(express.static(path.resolve("./", "../")));
 	app.get("/", (request, response) => {
 		response.render(createPath("index"), {
 			types: types
@@ -67,14 +71,18 @@ connect().then(() => {
 			})
 		})
 	}
+
+	app.use((request, response) => {
+		response
+			.status(404)
+			.render(createPath("error"))
+	})
 })
 
 app.set("view engine", "ejs");
 app.set("views", viewsDirectory);
 
 console.log(`viewsDirectory - ${viewsDirectory}, index - ${createPath("index")}`);
-
-app.use(express.static(path.resolve("./", "../")));
 
 app.get("/help", (request, response) => {
     response.render(createPath("help"));

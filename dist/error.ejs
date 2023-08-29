@@ -1,15 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-    <head>
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href=./css/form.css>
-    <title>Вопросы и ошибки</title>
+    <link rel="stylesheet" href=./css/error.css>
+    <title>Error</title>
 </head>
-    <body>
-        <!-- header -->
+<body>
+<!-- header -->
 <header class="header nav-bar">
     <section class="nav-bar__container header__container section-inner">
         <nav class="nav">
@@ -22,23 +22,12 @@
     </section>
 </header>
 <!-- / header -->
-        <!-- main -->
-        <main class="main">
-            <div class="main__container section-inner">
-                <h2 class="main__title">Заполните форму</h2>
-                <form action="#" method="post" class="main__form form">
-                    <input list="type-question" type="text" class="input input__datalist" placeholder="Тип вопроса">
-                    <datalist id="type-question" class="datalist__type-question type-question">
-                         <option value="Вопрос" class="type-question__item"></option>
-                        <option value="Ошибка" class="type-question__item"></option>
-                    </datalist>
-                    <textarea type="text" class="form__input input"></textarea>
-                    <input value="Отправить" type="submit" class="button button_primary form__submit">
-                </form>
-            </div>
-        </main>
-        <!-- / main -->
-        <!-- footer -->
+<main class="main">
+    <div class="main__section section-inner">
+        <h2>Ошибка! Такой страницы не существует!</h2>
+    </div>
+</main>
+<!-- footer -->
 <footer class="footer nav-bar">
     <section class="nav-bar__container footer__container section-inner">
         <nav class="nav">
@@ -51,5 +40,5 @@
     </section>
 </footer>
 <!-- / footer -->
-    </body>
+</body>
 </html>

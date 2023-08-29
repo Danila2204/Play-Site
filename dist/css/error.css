@@ -1,0 +1,9 @@
+@import "style.css";
+.main {
+  justify-content: center;
+}
+.main__section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
