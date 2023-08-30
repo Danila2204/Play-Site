@@ -13,6 +13,10 @@ const games = {};
 const types = [];
 const messages = {};
 
+let messageDB;
+let messagesCollection;
+let typesMessagesCollection;
+
 const app = express();
 const mongoClient = new mongoDB.MongoClient(URL);
 const connect = async () => {
@@ -20,11 +24,16 @@ const connect = async () => {
 		await mongoClient.connect();
 
 		const gamesDB = mongoClient.db("Games");
+		messageDB = mongoClient.db("Messages");
+
 		const gamesCollection = gamesDB.collection("games");
-		const typesCollection = gamesDB.collection("types");
+		const typesGamesCollection = gamesDB.collection("types");
+		messagesCollection = messageDB.collection("messages");
+		typesMessagesCollection = messageDB.collection("types");
 
 		const nameGames = gamesCollection.find({});
-		const typesGames = typesCollection.find({});
+		const typesGames = typesGamesCollection.find({});
+
 		let id = 0;
 		let typesIndex = 0;
 
@@ -47,16 +56,15 @@ const connect = async () => {
 			id++;
 			typesIndex++;
 		}
-
-
 	} catch (error) {
 		console.log(error);
 	}
 }
 
-
 connect().then(() => {
 	app.use(express.static(path.resolve("./", "../")));
+	app.use(express.urlencoded({extended: false}));
+
 	app.get("/", (request, response) => {
 		response.render(createPath("index"), {
 			types: types
@@ -72,6 +80,26 @@ connect().then(() => {
 		})
 	}
 
+	app.get("/form", (request, response) => {
+		response.render(createPath("form"));
+	})
+
+	app.post("/form", (request, response) => {
+		const {type, message} = request.body;
+
+		messagesCollection.insertOne({type: type, value: message});
+
+		response.render(createPath("form"));
+	})
+
+	app.get("/help", (request, response) => {
+		response.render(createPath("help"));
+	})
+
+	app.get("/about", (request, response) => {
+		response.render(createPath("about"));
+	})
+
 	app.use((request, response) => {
 		response
 			.status(404)
@@ -81,20 +109,6 @@ connect().then(() => {
 
 app.set("view engine", "ejs");
 app.set("views", viewsDirectory);
-
-console.log(`viewsDirectory - ${viewsDirectory}, index - ${createPath("index")}`);
-
-app.get("/help", (request, response) => {
-    response.render(createPath("help"));
-})
-
-app.get("/form", (request, response) => {
-    response.render(createPath("form"));
-})
-
-app.get("/about", (request, response) => {
-    response.render(createPath("about"));
-})
 
 app.listen(PORT, error => {
     if (error) console.log("Error -", error);
